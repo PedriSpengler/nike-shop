@@ -11,29 +11,27 @@ body{
     width: 100%;
     height: 100vh;
     background-color: #E4DFDC;
-    padding: 12px 24px 8px;
-}
-
-header{
-    width: 100%;
+    padding: 30px 40px;
+    overflow-x: hidden;
 }
 
 nav{
-    width: 40%;
-    display: flex;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
+    display: flex;
+    position: relative;
 }
 
 a{
     font-weight: 700;
     font-size: 18px;
-    line-height: 22px;
     text-decoration-line: none;
     color: #333333;
     opacity: 0.8;
     transition: 0.3s ease;
     position: relative;
+    padding: 0 30px;
 }
 
 a:hover{
@@ -57,12 +55,18 @@ a:hover::after{
 }
 
 .container{
+    justify-content: space-between;
     display: flex;
+    position: relative;
+    width: 100%;
+    max-height: 100vh;
 }
 
-.container-info{
+.container-principal{
     margin-top: 50px;
     width: 50%;
+    flex: 1;
+    flex-direction: column;
 }
 
 h1{
@@ -92,9 +96,8 @@ button{
     width: 197.25px;
     height: 54.32px;
     background: #2d2b2c;
-    border-radius: 8px;
-    border: none;
-
+    border-radius: 10px;
+    border: solid 4px #2d2b2c;
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
@@ -103,6 +106,13 @@ button{
     transition: 0.3s ease;
 }
 
+button:hover{
+    color: #2d2b2c;
+    background-color: #E4DFDC;
+    border-color: #2d2b2c;
+}
+
+
 .price{
     font-weight: 600;
     font-size: 30px;
@@ -110,17 +120,12 @@ button{
     color: #000000;
 }
 
-button:hover{
-    opacity: 0.8;
-}
-
-button:hover{
-    opacity: 0.6;
-}
-
-.img-shoes{
-    width: 30%;
-}
+.container .img-shoes{
+    max-width: 400px;
+    display: flex;
+    justify-content: flex-end;
+    height: auto;
+} 
 
 .container-shoes{
     width: 100%;
@@ -129,4 +134,121 @@ button:hover{
     bottom: 0;
     left: 0;
     background: rgba(246, 240, 240, 0.52);
+}
+
+@media only screen and (max-width: 653px){
+    .container-shoes{
+        position: relative;
+        padding: 10px;
+    }
+
+    .container .img-shoes{
+        margin-top: 20px;
+    }
+
+    .info{
+        margin-top: 20px;
+    }
+
+    .container{
+        flex-direction: column;;
+        align-items: stretch;
+    }   
+
+    .container-principal{
+        width: 100%;
+    }
+
+    a{
+        padding: 0 10px;
+        font-size: 15px;
+    }
+
+    h1{
+        font-size: 35px;
+        white-space: nowrap;
+        width: 400px;
+        line-height: normal;
+    }
+
+    h1 > br{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 597px){
+
+    body{
+        margin: 9px; padding: 5px;
+    }
+
+    section{
+        width: 100%;
+    }
+
+    .container-shoes{
+        text-align: center;
+        width: 360px; 
+    }
+    
+    
+    .container-shoes img {
+        position: relative;
+        width: 100px; 
+        height: auto; 
+        margin: 3px;
+    }
+}
+
+@media only screen and (max-width: 468px){
+    body{
+        margin: 9px; padding: 5px;
+    }
+    
+    section{
+        width: 100%;
+    }
+    
+    a{
+        padding: 0 5px;
+        font-size: 15px;
+    }
+
+    h1{
+        font-size: 34px;
+    }
+
+    .info{
+        font-size: 20px;
+        width: 370px;
+        padding: 14px;
+    }
+
+    button{
+        width: 140.25px;
+        height: 45.32px;
+        font-weight: 500;
+        font-size: 15px;
+    }
+
+    .price{
+        font-size: 26px;
+    }
+}
+
+@media only screen and (max-width: 429px){
+    section{
+        width: 100%;
+    }
+
+    nav{
+        width: 356px;
+    }
+    a{
+        font-size: 15px;
+    }
+
+    .container-shoes{
+        margin-top: 60px;
+    }
 }
